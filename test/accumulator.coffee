@@ -1,5 +1,5 @@
 should = require 'should'
-accumulator = require '../lib/accumulator'
+accumulator = require '..'
 
 describe 'accumulator', ->
   it 'should wait for all collectors to return', (done) ->
