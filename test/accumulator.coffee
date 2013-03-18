@@ -52,3 +52,20 @@ describe 'accumulator', ->
     collector()
 
     setTimeout collector()('some error', 'some result'), 1
+
+  it 'should ignore duplicate calls', (done) ->
+    collector = accumulator (err, results) ->
+      should.not.exist err
+      results.should.eql ['a', 'c']
+      done()
+
+    cb1 = collector()
+    cb2 = collector()
+
+    fn1 = -> cb1 null, 'a'
+    fn2 = -> cb1 null, 'b'
+    fn3 = -> cb2 null, 'c'
+
+    setTimeout fn1, 1
+    setTimeout fn2, 1
+    setTimeout fn3, 3

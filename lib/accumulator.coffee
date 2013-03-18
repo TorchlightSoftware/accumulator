@@ -5,9 +5,13 @@ module.exports = (done) ->
 
   ->
     counter++
+    called = false
 
     (err, result) ->
       return if error
+      return if called
+
+      called = true
       if err
         error = err
         return done err, results
