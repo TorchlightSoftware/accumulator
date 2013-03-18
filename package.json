@@ -1,7 +1,7 @@
 {
   "name":"accumulator",
   "description":"Wait to call the final callback until all subtasks have returned.",
-  "version":"0.0.1",
+  "version":"0.0.2",
   "homepage":"http://github.com/TorchlightSoftware/accumulator",
   "repository":"git://github.com/TorchlightSoftware/accumulator.git",
   "author":"Torchlight Software <info@torchlightsoftware.com> (http://torchlightsoftware.com)",
